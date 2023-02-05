@@ -10,9 +10,12 @@ def powers(N, p):
     Returns: an array consisting of powers of p
     """
 
-    # YOUR CODE HERE
-    # Replace None with an appropriate return value
-    return None
+    power_nums = np.array([])
+    
+    for i in range(1, N + 1):
+        power_nums = np.append(power_nums, p**i)
+
+    return power_nums
 
 
 #############################################################
