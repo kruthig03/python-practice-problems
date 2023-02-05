@@ -14,7 +14,7 @@ def min_depth_leaf(tree):
         return 1
     else:
         lst = [min_depth_leaf(subchild) for subchild in tree.children]
-        return min(lst
+        return min(lst)
 
 
 #############################################################
