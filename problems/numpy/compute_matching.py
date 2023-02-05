@@ -9,9 +9,11 @@ def compute_matching(x, y):
              x and y
     """
 
-    # YOUR CODE HERE
-    # Replace None with an appropriate return value
-    return None
+    result = np.array([])
+    for i in range(len(x)):
+        result = np.append(result, x[i] == y[i])
+
+    return result
 
 
 #############################################################
