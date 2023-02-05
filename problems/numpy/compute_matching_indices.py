@@ -9,9 +9,13 @@ def compute_matching_indices(x, y):
     Note that the returned array must be one-dimensional! 
     """
 
-    # YOUR CODE HERE
-    # Replace None with an appropriate return value
-    return None
+    result = np.array([])
+    
+    for i in range(len(x)):
+        if x[i] == y[i]:
+            result = np.append(result, i)
+
+    return result
     
 
 #############################################################
