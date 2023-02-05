@@ -10,8 +10,9 @@ def powers(N, p):
     Returns: an array consisting of powers of p
     """
 
-    power_nums = np.array([])
-    
+    power_nums = np.repeat(p, N)
+    power_nums = np.multiply(power_nums, power_nums.index)
+ 
     for i in range(1, N + 1):
         power_nums = np.append(power_nums, p**i)
 
