@@ -108,6 +108,23 @@ class Divide:
 
         return f"({op1_str} / {op2_str})"
 
+class Abs:
+    def __init__(self, op1):
+        self.op1 = op1
+    
+    def is_const(self):
+        return False
+    
+    def.num_nodes(self):
+        return 1 + self.op1.num_nodes()
+    
+    def eval(self):
+        op1_value = self.op1.eval()
+        return abs(op1_value)
+    
+    def __str__(self):
+        op1_str = str(abs(self.op1))
+        return f"({op1_str})"
 
 
 if __name__ == "__main__":
