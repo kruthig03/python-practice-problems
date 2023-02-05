@@ -58,6 +58,54 @@ class Node:
         else:
             return self
 
+def inorder(root, lst = []):
+    lst.append(root.value)
+    if not root.is_leaf():
+        inorder(root.left, lst)
+        inorder(root.right, lst)
+    
+    return sorted(lst)
+
+def min_item(root):
+    if root.is_empty():
+        return None
+    items = inorder(root, lst = [])
+    return items[0]
+       
+def max_item(root):
+    if root.is_empty():
+        return None
+    items = inorder(root, lst = [])
+    return items[-1]
+
+def balance_factor(root):
+    if root.is_empty():
+        return None
+    return root.right.height() - root.left.height()
+
+def balanced_everywhere(root):
+    if not -1 <= root.balance_factor <= 1:
+        return False
+    else:
+        if not root.is_empty() or root.is_leaf():
+            balanced_everywhere(root.left)
+            balanced_everywhere(root.right)
+    
+    return True
+
+def add_to_all(root, integer):
+    if not root.is_empty():
+        root.val = root.val + integer
+        if not root.is_leaf():
+            add_to_all(root.left, integer)
+            add_to_all(root.right, integer)
+
+def path_to(root, integer):
+
+
+def __str__(root)
+            
+
 
 if __name__ == "__main__":
     bst = Empty().insert(42).insert(10).insert(15).insert(63)
