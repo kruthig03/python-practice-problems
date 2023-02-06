@@ -11,9 +11,11 @@ def find_closest_value(x):
         closest to the mean
     """
     
-    # YOUR CODE HERE
-    # Replace None with an appropriate return value
-    return None
+    avg = np.mean(x)
+    y = abs(x - avg)
+    idx = np.argmin(y)
+    
+    return (idx, x[idx])
     
 
 #############################################################
