@@ -59,12 +59,8 @@ class Node:
             return self
 
 def inorder(root, lst = []):
-    lst.append(root.value)
-    if not root.is_leaf():
-        inorder(root.left, lst)
-        inorder(root.right, lst)
     
-    return sorted(lst)
+    return [self.left.inorder() + root + self.right.inorder()]
 
 def min_item(root):
     if root.is_empty():
@@ -87,7 +83,7 @@ def balanced_everywhere(root):
     if not -1 <= root.balance_factor <= 1:
         return False
     else:
-        if not root.is_empty() or root.is_leaf():
+        if not (root.is_empty() or root.is_leaf()):
             balanced_everywhere(root.left)
             balanced_everywhere(root.right)
     
@@ -95,7 +91,7 @@ def balanced_everywhere(root):
 
 def add_to_all(root, integer):
     if not root.is_empty():
-        root.val = root.val + integer
+        root.value = root.value + integer
         if not root.is_leaf():
             add_to_all(root.left, integer)
             add_to_all(root.right, integer)
